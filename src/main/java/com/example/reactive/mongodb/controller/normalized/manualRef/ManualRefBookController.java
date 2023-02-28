@@ -2,6 +2,7 @@ package com.example.reactive.mongodb.controller.normalized.manualRef;
 
 import com.example.reactive.mongodb.entity.normalized.dbRef.DBRefBook;
 import com.example.reactive.mongodb.entity.normalized.manualRef.ManualRefBook;
+import com.example.reactive.mongodb.entity.normalized.manualRef.ManualRefBookResult;
 import com.example.reactive.mongodb.repository.normalized.manualRef.ManualRefBookRepository;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -25,5 +26,15 @@ public class ManualRefBookController {
     @GetMapping
     public Flux<ManualRefBook> findAll() {
         return manualRefBookRepository.findAll();
+    }
+
+    @GetMapping("/byLookUp")
+    public Flux<ManualRefBookResult> findByLookUp() {
+        return manualRefBookRepository.findByLookUp();
+    }
+
+    @GetMapping("/byPublisherId/{id}")
+    public Flux<ManualRefBookResult> findByPublisherId(@PathVariable Long id) {
+        return manualRefBookRepository.findByLookUpWithPublisherId(id);
     }
 }

@@ -28,8 +28,4 @@ public class ManualRefPublisherController {
         return manualRefPublisherRepository.findAll();
     }
 
-    @GetMapping("/byLookUp")
-    public Flux<ManualRefBookResult> findByLookUp() {
-        return manualRefPublisherRepository.findByLookUp();
-    }
 }

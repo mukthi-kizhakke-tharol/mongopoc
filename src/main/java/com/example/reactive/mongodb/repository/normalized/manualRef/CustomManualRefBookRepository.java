@@ -8,4 +8,5 @@ import reactor.core.publisher.Mono;
 public interface CustomManualRefBookRepository {
 
     Flux<ManualRefBookResult> findByLookUp();
+    Flux<ManualRefBookResult> findByLookUpWithPublisherId(Long manualRefPublisherId);
 }

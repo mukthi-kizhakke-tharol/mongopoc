@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.LookupOperation;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -28,6 +29,17 @@ public class CustomManualRefBookRepositoryImpl implements CustomManualRefBookRep
                 .foreignField("_id")
                 .as("manualRefPublisher");
         Aggregation aggregation = Aggregation.newAggregation(lookupOperation);
+        Flux<ManualRefBookResult> results = reactiveMongoTemplate.aggregate(aggregation, "manualRefBook", ManualRefBookResult.class);
+        return results;
+    }
+
+    public Flux<ManualRefBookResult> findByLookUpWithPublisherId(Long manualRefPublisherId) {
+        LookupOperation lookupOperation = LookupOperation.newLookup()
+                .from("manualRefPublisher")
+                .localField("manualRefPublisherId")
+                .foreignField("_id")
+                .as("manualRefPublisher");
+        Aggregation aggregation = Aggregation.newAggregation(Aggregation.match(Criteria.where("manualRefPublisherId").is(manualRefPublisherId)), lookupOperation);
         Flux<ManualRefBookResult> results = reactiveMongoTemplate.aggregate(aggregation, "manualRefBook", ManualRefBookResult.class);
         return results;
     }

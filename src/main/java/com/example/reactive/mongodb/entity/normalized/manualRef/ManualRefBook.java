@@ -1,6 +1,7 @@
 package com.example.reactive.mongodb.entity.normalized.manualRef;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -10,6 +11,7 @@ public class ManualRefBook {
     private Long id;
     private String title;
     private int pages;
+    @Indexed
     private Long manualRefPublisherId;
 
     public ManualRefBook() {
