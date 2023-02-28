@@ -14,16 +14,12 @@ public class DocumentReferencePublisher {
     private Long id;
     private String name;
 
-    @DocumentReference
-    private List<DocumentReferenceBook> documentReferenceBook;
-
     public DocumentReferencePublisher() {
     }
 
-    public DocumentReferencePublisher(Long id, String name, List<DocumentReferenceBook> documentReferenceBook) {
+    public DocumentReferencePublisher(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.documentReferenceBook = documentReferenceBook;
     }
 
     public Long getId() {
@@ -40,13 +36,5 @@ public class DocumentReferencePublisher {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<DocumentReferenceBook> getDocumentReferenceBook() {
-        return documentReferenceBook;
-    }
-
-    public void setDocumentReferenceBook(List<DocumentReferenceBook> documentReferenceBook) {
-        this.documentReferenceBook = documentReferenceBook;
     }
 }

@@ -13,9 +13,7 @@ public class DocumentReferenceBook {
     private String title;
     private int pages;
 
-    //@Field("publisher_id")
-    //@DocumentReference(lookup = "{ '_id' : ?#{#target} }")
-    @DocumentReference(lazy=true)
+    @DocumentReference
     private DocumentReferencePublisher documentReferencePublisher;
 
     public DocumentReferenceBook() {
