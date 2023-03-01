@@ -1,5 +1,6 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -9,6 +10,8 @@ public class EquipmentAndHaulage {
 
     public static final String WEIGHT = "WEIGHT";
     private Long id;
+    @Indexed
+    private String bookingCorrelationId;
     private Container containerDetails;
 
     private List<Stuffing> stuffing;
@@ -28,7 +31,7 @@ public class EquipmentAndHaulage {
     public EquipmentAndHaulage() {
     }
 
-    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, int groupId, Long id) {
+    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, int groupId, Long id, String bookingCorrelationId) {
         this.containerDetails = containerDetails;
         this.stuffing = stuffing;
         this.dangerousDetails = dangerousDetails;
@@ -38,6 +41,7 @@ public class EquipmentAndHaulage {
         this.stuffingInstanceId = stuffingInstanceId;
         this.groupId = groupId;
         this.id = id;
+        this.bookingCorrelationId = bookingCorrelationId;
     }
 
     public Container getContainerDetails() {
@@ -110,5 +114,13 @@ public class EquipmentAndHaulage {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getBookingCorrelationId() {
+        return bookingCorrelationId;
+    }
+
+    public void setBookingCorrelationId(String bookingCorrelationId) {
+        this.bookingCorrelationId = bookingCorrelationId;
     }
 }

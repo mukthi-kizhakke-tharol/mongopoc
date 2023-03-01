@@ -25,8 +25,11 @@ public class BookingInformationController {
         return Mono.just(bookingInformation.getEquipmentAndHaulage())
                 .flatMap(equipmentAndHaulages -> Mono.just(equipmentAndHaulages)
                         .flatMapMany(Flux::fromIterable)
+                        .map(equipmentAndHaulage -> {
+                            equipmentAndHaulage.setBookingCorrelationId(bookingInformation.getCorrelationId());
+                            return equipmentAndHaulage;
+                        })
                         .flatMap(equipmentAndHaulageRepository::save)
-                        .map(equipmentAndHaulage -> bookingInformation.getEquipmentAndHaulageIds().add(equipmentAndHaulage.getId()))
                         .then(Mono.just(bookingInformation)))
                 .flatMap(bookingInformationRepository::save);
     }
@@ -39,6 +42,12 @@ public class BookingInformationController {
 
     @GetMapping("/byLookup")
     public Flux<BookingInformation> findByLookUp() {
-        return bookingInformationRepository.findByLookUp();
+        return bookingInformationRepository.findAll()
+                .flatMap(bookingInformation -> equipmentAndHaulageRepository.findByBookingCorrelationId(bookingInformation.getCorrelationId())
+                        .collectList()
+                        .map(equipmentAndHaulages -> {
+                            bookingInformation.setEquipmentAndHaulage(equipmentAndHaulages);
+                            return bookingInformation;
+                        }));
     }
 }

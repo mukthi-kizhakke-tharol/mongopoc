@@ -17,19 +17,17 @@ public class BookingInformation {
 
     private Cargo cargo;
 
+    @Transient
     private List<EquipmentAndHaulage> equipmentAndHaulage;
-
-    private List<Long> equipmentAndHaulageIds = new ArrayList<>();
 
     public BookingInformation() {
     }
 
-    public BookingInformation(String correlationId, List<Party> parties, Cargo cargo, List<EquipmentAndHaulage> equipmentAndHaulage, List<Long> equipmentAndHaulageIds) {
+    public BookingInformation(String correlationId, List<Party> parties, Cargo cargo, List<EquipmentAndHaulage> equipmentAndHaulage) {
         this.correlationId = correlationId;
         this.parties = parties;
         this.cargo = cargo;
-        this.equipmentAndHaulage = null;
-        this.equipmentAndHaulageIds = new ArrayList<>();
+        this.equipmentAndHaulage = equipmentAndHaulage;
     }
 
     public String getCorrelationId() {
@@ -64,11 +62,4 @@ public class BookingInformation {
         this.equipmentAndHaulage = equipmentAndHaulage;
     }
 
-    public List<Long> getEquipmentAndHaulageIds() {
-        return equipmentAndHaulageIds;
-    }
-
-    public void setEquipmentAndHaulageIds(List<Long> equipmentAndHaulageIds) {
-        this.equipmentAndHaulageIds = equipmentAndHaulageIds;
-    }
 }
