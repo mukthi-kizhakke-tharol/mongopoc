@@ -25,7 +25,10 @@ public class CustomMongoConfig extends AbstractReactiveMongoConfiguration {
 
     @Bean
     public ReactiveMongoTemplate reactiveMongoTemplate() {
-        return new ReactiveMongoTemplate(mongoClient(), dataBaseName);
+        ReactiveMongoTemplate reactiveMongoTemplate = new ReactiveMongoTemplate(mongoClient(), dataBaseName);
+        reactiveMongoTemplate.indexOps(ManualRefBook.class).
+                ensureIndex(new Index().on("manualRefPublisherId", Sort.Direction.ASC));
+        return reactiveMongoTemplate;
     }
 
     @Override
