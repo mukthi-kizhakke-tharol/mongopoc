@@ -1,0 +1,551 @@
+{
+  "correlationId": "b66d0dc0-8f3c-4e78-a472-63043b504ad5",
+  "cargo": {
+    "instanceId": "60NPG2KZQ1O3B",
+    "maerskCommodityCode": "001408"
+  },
+  "references": {
+    "senderSystem": "SSIB",
+    "commitmentServiceContract": "ONLINE1",
+    "deliveryAgreementType": "2",
+    "productCode": "MaerskSpot",
+    "priceId": {
+      "instanceId": "L26HG2KZQ1O3B",
+      "value": "Q_4691394;P_471152975_P04735ft/20DRY:1;"
+    },
+    "priceCalculationDate": "2022-08-16"
+  },
+  "transport": {
+    "earliestDepartureDate": "2022-08-26",
+    "carrierCode": "MAEU",
+    "exportServiceMode": "CY",
+    "importServiceMode": "CY",
+    "routeDetails": {
+      "placeOfReceipt": {
+        "maerskCityGeoId": "2JZIXTBC98ZGF",
+        "cityName": "Ashdod",
+        "maerskCountryGeoId": "3NOCHIMNZL5KU",
+        "countryName": "Israel",
+        "instanceId": "A8ROH2KZQ1O3B"
+      },
+      "placeOfDelivery": {
+        "maerskCityGeoId": "1CGP5EJH2UOOV",
+        "cityName": "Mombasa",
+        "maerskCountryGeoId": "23KEL25GX88LA",
+        "countryName": "Kenya",
+        "instanceId": "J23OH2KZQ1O3B"
+      },
+      "selectedRoute": {
+        "tradeLaneCode": "EUR/EAF",
+        "bookingSchedules": [
+          {
+            "originDepartureDateTimeLocal": "2022-08-26T15:00:00",
+            "destinationArrivalDateTimeLocal": "2022-08-30T00:01:00",
+            "originDepartureDateTimeUTC": "2022-08-26T12:00:00",
+            "destinationArrivalDateTimeUTC": "2022-08-29T22:01:00",
+            "transportMode": {
+              "vessel": {
+                "maerskId": "L24",
+                "name": "NYSTED MAERSK"
+              },
+              "exportVoyageNumber": "234N",
+              "importVoyageNumber": "234N"
+            },
+            "serviceCode": "SLB",
+            "startLocation": {
+              "maerskCityGeoId": "2JZIXTBC98ZGF",
+              "maerskCityCode": "ILASD",
+              "cityName": "Ashdod",
+              "maerskSiteGeoId": "3NY2QH14JCGDD",
+              "maerskSiteCode": "ILASDPT",
+              "siteName": "Ashdod Terminal",
+              "maerskCountryGeoId": "3NOCHIMNZL5KU",
+              "countryCode": "IL",
+              "countryName": "Israel"
+            },
+            "endLocation": {
+              "maerskCityGeoId": "3I6W2NB2MQV7I",
+              "maerskCityCode": "EGPSD",
+              "cityName": "Port Said East",
+              "maerskSiteGeoId": "0FYKXUTLQUD49",
+              "maerskSiteCode": "EGPSDTM",
+              "siteName": "East Port Said Terminal",
+              "maerskCountryGeoId": "27NMWTWHK5KE6",
+              "countryCode": "EG",
+              "countryName": "Egypt"
+            },
+            "inlandCarrierCode": "L2SLBM",
+            "transportModeCode": "MVS"
+          },
+          {
+            "originDepartureDateTimeLocal": "2022-09-03T05:00:00",
+            "destinationArrivalDateTimeLocal": "2022-09-11T02:00:00",
+            "originDepartureDateTimeUTC": "2022-09-03T03:00:00",
+            "destinationArrivalDateTimeUTC": "2022-09-10T22:00:00",
+            "transportMode": {
+              "vessel": {
+                "maerskId": "U8R",
+                "name": "NORO"
+              },
+              "exportVoyageNumber": "234E",
+              "importVoyageNumber": "234E"
+            },
+            "serviceCode": "408",
+            "startLocation": {
+              "maerskCityGeoId": "3I6W2NB2MQV7I",
+              "maerskCityCode": "EGPSD",
+              "cityName": "Port Said East",
+              "maerskSiteGeoId": "0FYKXUTLQUD49",
+              "maerskSiteCode": "EGPSDTM",
+              "siteName": "East Port Said Terminal",
+              "maerskCountryGeoId": "27NMWTWHK5KE6",
+              "countryCode": "EG",
+              "countryName": "Egypt"
+            },
+            "endLocation": {
+              "maerskCityGeoId": "30ECXPXBQJMHO",
+              "maerskCityCode": "OMSLV",
+              "cityName": "Salalah",
+              "maerskSiteGeoId": "2LU3R3RRU5RVI",
+              "maerskSiteCode": "OMSLVTM",
+              "siteName": "Salalah Terminal",
+              "maerskCountryGeoId": "1CQTOFCHH6GLA",
+              "countryCode": "OM",
+              "countryName": "Oman"
+            },
+            "inlandCarrierCode": "E4408M",
+            "transportModeCode": "MVS"
+          },
+          {
+            "originDepartureDateTimeLocal": "2022-09-13T17:00:00",
+            "destinationArrivalDateTimeLocal": "2022-09-20T00:01:00",
+            "originDepartureDateTimeUTC": "2022-09-13T13:00:00",
+            "destinationArrivalDateTimeUTC": "2022-09-19T21:01:00",
+            "transportMode": {
+              "vessel": {
+                "maerskId": "I6O",
+                "name": "LISA"
+              },
+              "exportVoyageNumber": "235S",
+              "importVoyageNumber": "235S"
+            },
+            "serviceCode": "28X",
+            "startLocation": {
+              "maerskCityGeoId": "30ECXPXBQJMHO",
+              "maerskCityCode": "OMSLV",
+              "cityName": "Salalah",
+              "maerskSiteGeoId": "2LU3R3RRU5RVI",
+              "maerskSiteCode": "OMSLVTM",
+              "siteName": "Salalah Terminal",
+              "maerskCountryGeoId": "1CQTOFCHH6GLA",
+              "countryCode": "OM",
+              "countryName": "Oman"
+            },
+            "endLocation": {
+              "maerskCityGeoId": "1CGP5EJH2UOOV",
+              "maerskCityCode": "KEMBA",
+              "cityName": "Mombasa",
+              "maerskSiteGeoId": "36PE7JE20XEFY",
+              "maerskSiteCode": "KEMBATM",
+              "siteName": "Mombasa Terminal",
+              "maerskCountryGeoId": "23KEL25GX88LA",
+              "countryCode": "KE",
+              "countryName": "Kenya"
+            },
+            "inlandCarrierCode": "Z328XM",
+            "transportModeCode": "MVS"
+          }
+        ]
+      }
+    }
+  },
+  "parties": [
+    {
+      "instanceId": "MJJI60KZQ1BLB",
+      "maerskPartyCode": "413015644",
+      "cmdCode": "IL015644",
+      "companyName": "ORIAN SH M LTD",
+      "companyAddress": "ORIAN SH M LTD 9 BINYAMIN SHMOTKIN 7536312 RISHON LE ZION Israel",
+      "roleCode": "1"
+    },
+    {
+      "instanceId": "DMWKOP72S1CLB",
+      "maerskPartyCode": "21900246518",
+      "cmdCode": "KE00246518",
+      "companyName": "WAKI CLEARING & FORWARDING AGENTS LT",
+      "companyAddress": "WAKI CLEARING & FORWARDING AGENTS LT OPP KAPA MSA RD HEAD OFFICE 00508 NAIROBI Kenya",
+      "roleCode": "14"
+    },
+    {
+      "instanceId": "IOXQ0SO5S18KB",
+      "maerskPartyCode": "21900900915",
+      "cmdCode": "KE00900915",
+      "companyName": "WAKI CLEARING AND FWDG AGENTS LTD",
+      "companyAddress": "WAKI CLEARING AND FWDG AGENTS LTD CARGO VILLAGE AIRPORT J K I A 80100 MOMBASA Kenya",
+      "roleCode": "14"
+    },
+    {
+      "instanceId": "713LS7Z2Q19KB",
+      "maerskPartyCode": "413015644",
+      "cmdCode": "IL015644",
+      "companyName": "ORIAN SH M LTD",
+      "companyAddress": "ORIAN SH M LTD 9 BINYAMIN SHMOTKIN 7536312 RISHON LE ZION Israel",
+      "roleCode": "14"
+    },
+    {
+      "instanceId": "3NJSU2RRR1BLB",
+      "maerskPartyCode": "21900036829",
+      "cmdCode": "KE00036829",
+      "companyName": "ORPOWER 4 INC",
+      "companyAddress": "ORPOWER 4 INC OFF MOI SOUTH LAKE RD HELLSGATE NATIONAL PARK 20117 NAIVASHA Kenya",
+      "roleCode": "14"
+    },
+    {
+      "instanceId": "Y0ZH60KZQ1BLB",
+      "maerskPartyCode": "413015644",
+      "cmdCode": "IL015644",
+      "companyName": "ORIAN SH M LTD",
+      "companyAddress": "ORIAN SH M LTD 9 BINYAMIN SHMOTKIN 7536312 RISHON LE ZION Israel",
+      "roleCode": "2"
+    },
+    {
+      "instanceId": "64TLOP72S1CLB",
+      "maerskPartyCode": "21900246518",
+      "cmdCode": "KE00246518",
+      "companyName": "WAKI CLEARING & FORWARDING AGENTS LT",
+      "companyAddress": "WAKI CLEARING & FORWARDING AGENTS LT OPP KAPA MSA RD HEAD OFFICE 00508 NAIROBI Kenya",
+      "roleCode": "26"
+    },
+    {
+      "instanceId": "H74R0SO5S18KB",
+      "maerskPartyCode": "21900900915",
+      "cmdCode": "KE00900915",
+      "companyName": "WAKI CLEARING AND FWDG AGENTS LTD",
+      "companyAddress": "WAKI CLEARING AND FWDG AGENTS LTD CARGO VILLAGE AIRPORT J K I A 80100 MOMBASA Kenya",
+      "roleCode": "26"
+    },
+    {
+      "instanceId": "EGFPT7Z2Q1BLB",
+      "maerskPartyCode": "413015644",
+      "cmdCode": "IL015644",
+      "companyName": "ORIAN SH M LTD",
+      "companyAddress": "ORIAN SH M LTD 9 BINYAMIN SHMOTKIN 7536312 RISHON LE ZION Israel",
+      "roleCode": "26"
+    },
+    {
+      "instanceId": "70ITU2RRR1BLB",
+      "maerskPartyCode": "21900036829",
+      "cmdCode": "KE00036829",
+      "companyName": "ORPOWER 4 INC",
+      "companyAddress": "ORPOWER 4 INC OFF MOI SOUTH LAKE RD HELLSGATE NATIONAL PARK 20117 NAIVASHA Kenya",
+      "roleCode": "26"
+    },
+    {
+      "instanceId": "U90MF8KZQ1ZJB",
+      "maerskPartyCode": "413015644",
+      "cmdCode": "IL015644",
+      "companyName": "ORIAN SH M LTD",
+      "companyAddress": "ORIAN C/O ORMAT SYSTEMS LTD\r NEW INDUSTRIAL AREA\r P.O.BOX 68 8122101\r Yavne Israel\r TEL:972-8-9433777 FAX:972-8-9439901",
+      "roleCode": "3"
+    },
+    {
+      "instanceId": "MHGP76Z2Q1DLB",
+      "maerskPartyCode": "21900036829",
+      "cmdCode": "KE00036829",
+      "companyName": "ORPOWER 4 INC",
+      "companyAddress": "Orpower 4 Inc,\r Hells gate national park,off Moi south lake road\r P.O BOX 1566-20117\r NAIVASHA - KENYA\r Email: aGachoka@ormat.com\r PIN: P051126278F\r ",
+      "roleCode": "4"
+    },
+    {
+      "instanceId": "K78EH2KZQ1O3B",
+      "maerskPartyCode": "413015644",
+      "cmdCode": "IL015644",
+      "companyName": "ORIAN SH M LTD",
+      "companyAddress": "ORIAN SH M LTD 9 BINYAMIN SHMOTKIN 7536312 RISHON LE ZION Israel",
+      "roleCode": "44"
+    },
+    {
+      "instanceId": "PRET7TO5S1ZJB",
+      "maerskPartyCode": "21900900915",
+      "cmdCode": "KE00900915",
+      "companyName": "WAKI CLEARING AND FWDG AGENTS LTD",
+      "companyAddress": "WAKI CLEARING AND FWDG AGENTS LTD CARGO VILLAGE AIRPORT J K I A 80100 MOMBASA Kenya",
+      "roleCode": "48"
+    },
+    {
+      "instanceId": "2JNU7TO5S1ZJB",
+      "maerskPartyCode": "21900900915",
+      "cmdCode": "KE00900915",
+      "companyName": "WAKI CLEARING AND FWDG AGENTS LTD",
+      "companyAddress": "WAKI CLEARING AND FWDG AGENTS LTD CARGO VILLAGE AIRPORT J K I A 80100 MOMBASA Kenya",
+      "roleCode": "49"
+    },
+    {
+      "instanceId": "EIMF86Z2Q18KB",
+      "maerskPartyCode": "21900246518",
+      "cmdCode": "KE00246518",
+      "companyName": "WAKI CLEARING & FORWARDING AGENTS LT",
+      "companyAddress": "Waki Clearing & Forwarding Agents\r LTD.Head Office  OPP Kapa Msa Rd.\r POB. 76250-00508 Nairobi\r Tel: +254203577470\r Fax: +254202022941",
+      "roleCode": "5"
+    },
+    {
+      "instanceId": "DV0Q86Z2Q1YJB",
+      "maerskPartyCode": "413015644",
+      "cmdCode": "IL015644",
+      "companyName": "ORIAN SH M LTD",
+      "companyAddress": "ORIAN SH M LTD 9 BINYAMIN SHMOTKIN 7536312 RISHON LE ZION Israel",
+      "roleCode": "22"
+    },
+    {
+      "instanceId": "UJDNXLFGT1ALB",
+      "maerskPartyCode": "21900900915",
+      "cmdCode": "KE00900915",
+      "companyName": "WAKI CLEARING AND FWDG AGENTS LTD",
+      "companyAddress": "WAKI CLEARING AND FWDG AGENTS LTD CARGO VILLAGE AIRPORT J K I A 80100 MOMBASA Kenya",
+      "roleCode": "31"
+    },
+    {
+      "instanceId": "02OI60KZQ1BLB",
+      "maerskPartyCode": "41300184873",
+      "cmdCode": "IL00184873",
+      "name": "Sarit Azenkot",
+      "roleName": "Booked By Contact"
+    }
+  ],
+  "equipmentAndHaulage": [
+    {
+      "containerDetails": {
+        "instanceId": "PR9OG2KZQ1O3B",
+        "size": "20",
+        "type": "DRY",
+        "height": "8 6",
+        "isoCode": "22G1",
+        "isShipperOwned": false,
+        "isImportReturned": false,
+        "isOutOfGauge": false
+      },
+      "stuffing": [
+        {
+          "propertyType": "WEIGHT",
+          "propertyValue": 6190.0,
+          "propertyMeasurementUnit": "KGS"
+        },
+        {
+          "propertyType": "WEIGHT",
+          "propertyValue": 13647.0,
+          "propertyMeasurementUnit": "LBS"
+        }
+      ],
+      "haulage": [
+        {
+          "instanceId": "X48BI2KZQ1O3B",
+          "arrangementType": "MERCHANT",
+          "operationalStage": "EXPORT",
+          "haulageArrangeEquipmentInstanceId": "ESACI2KZQ1O3B",
+          "haulageSites": [
+            {
+              "haulageSiteInstanceId": "IDFCI2KZQ1O3B",
+              "haulageSiteSequence": "1",
+              "maerskHaulageSiteRole": "EMPTY_EQUIPMENT_PICKUP",
+              "siteGeoId": "209PP8CZ4I9ZR",
+              "siteCode": "ILASD01",
+              "siteName": "Ashdod Emco Israel Depot",
+              "cityGeoId": "2JZIXTBC98ZGF",
+              "cityName": "Ashdod",
+              "haulageEquipmentInstanceId": "NJPCI2KZQ1O3B",
+              "haulageEquipmentSequence": "0",
+              "haulageStartTimestampLocal": "2022-08-16T12:00:00",
+              "siteAddress": "1 Hchashmal Street p.o.b. 4061",
+              "address1": "1 Hchashmal Street p.o.b. 4061",
+              "city": "Ashdod",
+              "countryName": "Israel"
+            },
+            {
+              "haulageSiteInstanceId": "KPUCI2KZQ1O3B",
+              "haulageSiteSequence": "1",
+              "maerskHaulageSiteRole": "FULL_RETURN",
+              "siteGeoId": "3NY2QH14JCGDD",
+              "siteCode": "ILASDPT",
+              "siteName": "Ashdod Terminal",
+              "cityGeoId": "2JZIXTBC98ZGF",
+              "cityName": "Ashdod",
+              "haulageEquipmentInstanceId": "1KZCI2KZQ1O3B",
+              "haulageEquipmentSequence": "9999",
+              "haulageStartTimestampLocal": "2022-08-26T12:01:00",
+              "city": "Ashdod",
+              "countryName": "Israel"
+            }
+          ],
+          "instructions": "ORIAN SH M LTD/ORIAN SH M LTD/SPOT -/1x20DRY86 /."
+        }
+      ],
+      "stuffingInstanceId": "951PG2KZQ1O3B"
+    }
+  ],
+  "cargoPackage": {
+    "instanceId": "TJWPG2KZQ1O3B",
+    "presentationSequence": "1"
+  },
+  "activityTasks": [
+    {
+      "taskName": "User task",
+      "description": "free time expiry date till 5th Oct 2022",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Specify Booked-by Customer",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Schedule Shipment",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Reserve Space",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Validate UTM Acceptance",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Arrange Intermodal For Export",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Specify Cargo and Equipment Details",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Price Shipment",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Approve Monetary Status (Export)",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Confirm Shipment",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Mark Shipment Ready for Vessel Planning",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Mark Shipment Ready to Load",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "EQUIPMENT PICKUP",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "Ashdod Terminal, Ashdod, RECEIPT",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "Ashdod Terminal, Ashdod, OUT",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "East Port Said Terminal, Port Said East, IN",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "East Port Said Terminal, Port Said East, OUT",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "Salalah Terminal, Salalah, IN",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "Salalah Terminal, Salalah, OUT",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "Mombasa Terminal, Mombasa, IN",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "OPS",
+      "description": "Mombasa Terminal, Mombasa, DELIVERY",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Specify Shipper",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Resolve Missing VGM Data",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Apply and Verify Price",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Approve Monetary Status (Documentation)",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Prepaid Invoice Completed",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Collect Invoice Completed",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    },
+    {
+      "taskName": "Approve Monetary Status (Import)",
+      "taskStatus": "4",
+      "taskStatusName": "Closed"
+    }
+  ],
+  "shipmentStatus": {
+    "code": "1",
+    "status": "Active"
+  },
+  "businessUnit": "2408",
+  "isContainerGatedIn": true,
+  "isContainerPickedUp": true,
+  "isReefer": false,
+  "isTemperatureControlled": false,
+  "isDangerous": false
+}

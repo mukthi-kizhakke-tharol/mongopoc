@@ -1,28 +1,24 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Container {
 
-    private String isoCode;
-
+    private String instanceId;
     private String size;
-
     private String type;
+    private String height;
+    private String isoCode;
+    private Boolean isShipperOwned;
+    private Boolean isImportReturned;
+    private Boolean isOutOfGauge;
 
     private String action;
-
-    private String height;
 
     private Integer quantity;
 
     private String shipperEquipmentNumber;
-
-    private Boolean isShipperOwned;
-
-    private Boolean isImportReturned;
-
-    private Boolean isOutOfGauge;
-
-    private String instanceId;
 
     private OutOfGaugeDetails outOfGaugeDetails;
 
@@ -100,27 +96,27 @@ public class Container {
         this.shipperEquipmentNumber = shipperEquipmentNumber;
     }
 
-    public Boolean getShipperOwned() {
+    public Boolean getIsShipperOwned() {
         return isShipperOwned;
     }
 
-    public void setShipperOwned(Boolean shipperOwned) {
+    public void setIsShipperOwned(Boolean shipperOwned) {
         isShipperOwned = shipperOwned;
     }
 
-    public Boolean getImportReturned() {
+    public Boolean getIsImportReturned() {
         return isImportReturned;
     }
 
-    public void setImportReturned(Boolean importReturned) {
+    public void setIsImportReturned(Boolean importReturned) {
         isImportReturned = importReturned;
     }
 
-    public Boolean getOutOfGauge() {
+    public Boolean getIsOutOfGauge() {
         return isOutOfGauge;
     }
 
-    public void setOutOfGauge(Boolean outOfGauge) {
+    public void setIsOutOfGauge(Boolean outOfGauge) {
         isOutOfGauge = outOfGauge;
     }
 

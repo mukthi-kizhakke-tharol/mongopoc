@@ -1,0 +1,68 @@
+{
+  "containerDetails": {
+    "instanceId": "PR9OG2KZQ1O3B",
+    "size": "20",
+    "type": "DRY",
+    "height": "8 6",
+    "isoCode": "22G1",
+    "isShipperOwned": false,
+    "isImportReturned": false,
+    "isOutOfGauge": false
+  },
+  "stuffing": [
+    {
+      "propertyType": "WEIGHT",
+      "propertyValue": 6190.0,
+      "propertyMeasurementUnit": "KGS"
+    },
+    {
+      "propertyType": "WEIGHT",
+      "propertyValue": 13647.0,
+      "propertyMeasurementUnit": "LBS"
+    }
+  ],
+  "haulage": [
+    {
+      "instanceId": "X48BI2KZQ1O3B",
+      "arrangementType": "MERCHANT",
+      "operationalStage": "EXPORT",
+      "haulageArrangeEquipmentInstanceId": "ESACI2KZQ1O3B",
+      "haulageSites": [
+        {
+          "haulageSiteInstanceId": "IDFCI2KZQ1O3B",
+          "haulageSiteSequence": "1",
+          "maerskHaulageSiteRole": "EMPTY_EQUIPMENT_PICKUP",
+          "siteGeoId": "209PP8CZ4I9ZR",
+          "siteCode": "ILASD01",
+          "siteName": "Ashdod Emco Israel Depot",
+          "cityGeoId": "2JZIXTBC98ZGF",
+          "cityName": "Ashdod",
+          "haulageEquipmentInstanceId": "NJPCI2KZQ1O3B",
+          "haulageEquipmentSequence": "0",
+          "haulageStartTimestampLocal": "2022-08-16T12:00:00",
+          "siteAddress": "1 Hchashmal Street p.o.b. 4061",
+          "address1": "1 Hchashmal Street p.o.b. 4061",
+          "city": "Ashdod",
+          "countryName": "Israel"
+        },
+        {
+          "haulageSiteInstanceId": "KPUCI2KZQ1O3B",
+          "haulageSiteSequence": "1",
+          "maerskHaulageSiteRole": "FULL_RETURN",
+          "siteGeoId": "3NY2QH14JCGDD",
+          "siteCode": "ILASDPT",
+          "siteName": "Ashdod Terminal",
+          "cityGeoId": "2JZIXTBC98ZGF",
+          "cityName": "Ashdod",
+          "haulageEquipmentInstanceId": "1KZCI2KZQ1O3B",
+          "haulageEquipmentSequence": "9999",
+          "haulageStartTimestampLocal": "2022-08-26T12:01:00",
+          "city": "Ashdod",
+          "countryName": "Israel"
+        }
+      ],
+      "instructions": "ORIAN SH M LTD/ORIAN SH M LTD/SPOT -/1x20DRY86 /."
+    }
+  ],
+  "stuffingInstanceId": "951PG2KZQ1O3B"
+}

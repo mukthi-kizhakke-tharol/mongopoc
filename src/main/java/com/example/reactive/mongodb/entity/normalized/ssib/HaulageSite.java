@@ -1,22 +1,25 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.LocalDateTime;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class HaulageSite {
 
     public static final String EMPTY_EQUIPMENT_PICKUP = "EMPTY_EQUIPMENT_PICKUP";
     public static final String FULL_RETURN = "FULL_RETURN";
     public static final String CARGO_PICKUP = "CARGO_PICKUP";
 
+    private String haulageSiteInstanceId;
+    private String haulageSiteSequence;
     private String action;
 
     private String maerskHaulageSiteRole;
 
     private String maerskSiteReferenceId;
 
-    private String siteAddress;
 
     private String siteGeoId;
 
@@ -30,8 +33,7 @@ public class HaulageSite {
 
     private String cityName;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", shape = JsonFormat.Shape.STRING)
-    private LocalDateTime haulageStartTimestampLocal;
+
 
     private String haulageReference;
 
@@ -40,9 +42,7 @@ public class HaulageSite {
 
     private ContactPerson haulageContact;
 
-    private String haulageSiteInstanceId;
 
-    private String haulageSiteSequence;
 
     private String haulageEquipmentInstanceId;
 
@@ -59,6 +59,10 @@ public class HaulageSite {
     private String haulageArrangeEquipmentInstanceId;
 
     private String tradingName;
+
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    private LocalDateTime haulageStartTimestampLocal;
+    private String siteAddress;
 
     private String address1;
 

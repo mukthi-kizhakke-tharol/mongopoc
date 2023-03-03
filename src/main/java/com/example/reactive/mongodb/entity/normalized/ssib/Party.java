@@ -2,10 +2,14 @@ package com.example.reactive.mongodb.entity.normalized.ssib;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Party {
 
+    private String instanceId;
     private String maerskPartyCode;
+    private String cmdCode;
 
     private String companyName;
 
@@ -15,11 +19,7 @@ public class Party {
 
     private String partyReference;
 
-    private String cmdCode;
-
     private ContactPerson partyContact;
-
-    private String instanceId;
 
     private String action;
 

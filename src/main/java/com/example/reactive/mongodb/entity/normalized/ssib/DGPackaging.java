@@ -1,7 +1,10 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.math.BigDecimal;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DGPackaging {
 
     private Integer quantity;

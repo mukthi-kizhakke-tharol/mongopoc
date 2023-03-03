@@ -1,7 +1,10 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class EquipmentAndHaulage {
 
     public static final String WEIGHT = "WEIGHT";
@@ -19,12 +22,12 @@ public class EquipmentAndHaulage {
 
     private String stuffingInstanceId;
 
-    private int groupId;
+    private Integer groupId;
 
     public EquipmentAndHaulage() {
     }
 
-    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, int groupId) {
+    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, Integer groupId) {
         this.containerDetails = containerDetails;
         this.stuffing = stuffing;
         this.dangerousDetails = dangerousDetails;
@@ -91,11 +94,11 @@ public class EquipmentAndHaulage {
         this.stuffingInstanceId = stuffingInstanceId;
     }
 
-    public int getGroupId() {
+    public Integer getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(int groupId) {
+    public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
 }

@@ -1,7 +1,10 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Haulage {
 
     public static final String ACTION_N = "N";
@@ -14,7 +17,6 @@ public class Haulage {
 
     private String action;
 
-    private String haulageArrangeEquipmentInstanceId;
 
     public enum HaulageArrangement {CARRIER, MERCHANT}
 
@@ -23,6 +25,7 @@ public class Haulage {
     private HaulageArrangement arrangementType;
 
     private OperationalStage operationalStage;
+    private String haulageArrangeEquipmentInstanceId;
 
     private List<HaulageSite> haulageSites;
 

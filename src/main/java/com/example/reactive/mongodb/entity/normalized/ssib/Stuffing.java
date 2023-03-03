@@ -1,7 +1,9 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Stuffing {
 
     private String propertyType;

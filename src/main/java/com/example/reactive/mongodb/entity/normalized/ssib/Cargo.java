@@ -1,8 +1,14 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Cargo {
+
+    private String instanceId;
 
     private String maerskCommodityCode;
 
@@ -17,8 +23,6 @@ public class Cargo {
     private String volumeMeasurementUnit;
 
     private List<DangerousDocument> dangerousGoodsDocuments;
-
-    private String instanceId;
 
     private String action;
 
