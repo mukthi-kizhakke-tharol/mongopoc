@@ -1,6 +1,7 @@
 package com.example.reactive.mongodb.config;
 
 import com.example.reactive.mongodb.entity.normalized.manualRef.ManualRefBook;
+import com.mongodb.MongoClientSettings;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,14 +19,12 @@ public class CustomMongoConfig extends AbstractReactiveMongoConfiguration {
     @Value("${databaseName}")
     private String dataBaseName;
 
-    @Bean
-    public MongoClient mongoClient() {
-        return MongoClients.create();
-    }
+    @Value("${connectionString}")
+    private String connectionString;
 
-    @Bean
-    public ReactiveMongoTemplate reactiveMongoTemplate() {
-        return new ReactiveMongoTemplate(mongoClient(), dataBaseName);
+    @Override
+    public MongoClient createReactiveMongoClient(MongoClientSettings settings) {
+        return MongoClients.create(connectionString);
     }
 
     @Override
