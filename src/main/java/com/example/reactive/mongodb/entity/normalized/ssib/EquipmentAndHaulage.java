@@ -2,12 +2,16 @@ package com.example.reactive.mongodb.entity.normalized.ssib;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Document
 public class EquipmentAndHaulage {
 
     public static final String WEIGHT = "WEIGHT";
+    private Long id;
     private Container containerDetails;
 
     private List<Stuffing> stuffing;
@@ -27,7 +31,7 @@ public class EquipmentAndHaulage {
     public EquipmentAndHaulage() {
     }
 
-    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, Integer groupId) {
+    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, Integer groupId, Long id) {
         this.containerDetails = containerDetails;
         this.stuffing = stuffing;
         this.dangerousDetails = dangerousDetails;
@@ -36,6 +40,7 @@ public class EquipmentAndHaulage {
         this.stuffingAction = stuffingAction;
         this.stuffingInstanceId = stuffingInstanceId;
         this.groupId = groupId;
+        this.id = id;
     }
 
     public Container getContainerDetails() {
@@ -100,5 +105,13 @@ public class EquipmentAndHaulage {
 
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Document
@@ -23,6 +24,8 @@ public class BookingInformation {
     private List<Party> parties;
 
     private List<EquipmentAndHaulage> equipmentAndHaulage;
+
+    private List<Long> equipmentAndHaulageIds = new ArrayList<>();
 
     private CargoPackage cargoPackage;
 
@@ -45,11 +48,12 @@ public class BookingInformation {
     public BookingInformation() {
     }
 
-    public BookingInformation(String correlationId, List<Party> parties, Cargo cargo, List<EquipmentAndHaulage> equipmentAndHaulage, References references, Transport transport, CargoPackage cargoPackage, List<ActivityTask> activityTasks, ShipmentStatus shipmentStatus, String businessUnit, boolean isContainerGatedIn, boolean isContainerPickedUp, boolean isReefer, boolean isTemperatureControlled, boolean isDangerous) {
+    public BookingInformation(String correlationId, List<Party> parties, Cargo cargo, List<EquipmentAndHaulage> equipmentAndHaulage, List<Long> equipmentAndHaulageIds, References references, Transport transport, CargoPackage cargoPackage, List<ActivityTask> activityTasks, ShipmentStatus shipmentStatus, String businessUnit, boolean isContainerGatedIn, boolean isContainerPickedUp, boolean isReefer, boolean isTemperatureControlled, boolean isDangerous) {
         this.correlationId = correlationId;
         this.parties = parties;
         this.cargo = cargo;
-        this.equipmentAndHaulage = equipmentAndHaulage;
+        this.equipmentAndHaulage = null;
+        this.equipmentAndHaulageIds = new ArrayList<>();
         this.references = references;
         this.transport = transport;
         this.cargoPackage = cargoPackage;
@@ -93,6 +97,14 @@ public class BookingInformation {
 
     public void setEquipmentAndHaulage(List<EquipmentAndHaulage> equipmentAndHaulage) {
         this.equipmentAndHaulage = equipmentAndHaulage;
+    }
+
+    public List<Long> getEquipmentAndHaulageIds() {
+        return equipmentAndHaulageIds;
+    }
+
+    public void setEquipmentAndHaulageIds(List<Long> equipmentAndHaulageIds) {
+        this.equipmentAndHaulageIds = equipmentAndHaulageIds;
     }
 
     public References getReferences() {
@@ -182,4 +194,5 @@ public class BookingInformation {
     public void setIsDangerous(boolean dangerous) {
         isDangerous = dangerous;
     }
+
 }
