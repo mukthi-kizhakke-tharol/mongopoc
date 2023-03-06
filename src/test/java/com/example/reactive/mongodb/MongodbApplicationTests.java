@@ -1,6 +1,9 @@
 package com.example.reactive.mongodb;
 
+import com.example.reactive.mongodb.controller.ExperimentController;
+import com.example.reactive.mongodb.controller.normalized.ssib.BookingInformationController;
 import com.example.reactive.mongodb.entity.Book;
+import com.example.reactive.mongodb.entity.Experiment;
 import com.example.reactive.mongodb.entity.Member;
 import com.example.reactive.mongodb.entity.Publisher;
 import com.example.reactive.mongodb.entity.normalized.ssib.BookingInformation;
@@ -8,6 +11,7 @@ import com.example.reactive.mongodb.entity.normalized.ssib.EquipmentAndHaulage;
 import com.example.reactive.mongodb.repository.BookRepository;
 import com.example.reactive.mongodb.repository.MemberRepository;
 import com.example.reactive.mongodb.repository.normalized.ssib.BookingInformationRepository;
+import com.example.reactive.mongodb.repository.normalized.ssib.EquipmentAndHaulageRepository;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,9 +30,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
 class MongodbApplicationTests {
+
+	ObjectMapper objectMapper = new ObjectMapper()
+			.registerModule(new JavaTimeModule())
+			.setSerializationInclusion(JsonInclude.Include.NON_NULL)
+			.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
 	@Autowired
 	private MemberRepository memberRepository;
@@ -38,6 +48,15 @@ class MongodbApplicationTests {
 
 	@Autowired
 	private BookingInformationRepository bookingInformationRepository;
+
+	@Autowired
+	private BookingInformationController bookingInformationController;
+
+	@Autowired
+	private ExperimentController experimentController;
+
+	@Autowired
+	private EquipmentAndHaulageRepository equipmentAndHaulageRepository;
 
 	@Test
 	void contextLoads() {
@@ -75,22 +94,57 @@ class MongodbApplicationTests {
 	@Test
 	void testBookingInformationWith999EquipmentAndHaulage() throws IOException {
 		String offerPayload = loadPayload("classpath:bookingInformation/bookingInformation.json");
-		ObjectMapper objectMapper = new ObjectMapper()
-				.registerModule(new JavaTimeModule())
-				.setSerializationInclusion(JsonInclude.Include.NON_NULL)
-				.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
 		BookingInformation bookingInformation = objectMapper.readValue(offerPayload, BookingInformation.class);
 //		EquipmentAndHaulage equipmentAndHaulage = bookingInformation.getEquipmentAndHaulage().get(0);
 		bookingInformation.setEquipmentAndHaulage(new ArrayList<>());
-		for (int i = 0; i < 891; i++) {
+		for (int i = 0; i < 10; i++) {
 			EquipmentAndHaulage equipmentAndHaulage = objectMapper.readValue(loadPayload("classpath:bookingInformation/equipmentAndHaulage.json"), EquipmentAndHaulage.class);
 			bookingInformation.getEquipmentAndHaulage().add(equipmentAndHaulage);
 		}
-		Mono<BookingInformation> save = bookingInformationRepository.save(bookingInformation);
+		Mono<BookingInformation> save = bookingInformationController.save(bookingInformation);
 		StepVerifier.create(save)
 				.consumeNextWith(b -> System.out.println(b.getCorrelationId()))
 				.thenConsumeWhile(x -> true)
 				.verifyComplete();
+	}
+
+	@Test
+	void lookUpTest() {
+		Flux<BookingInformation> save = bookingInformationController.findByLookUp();
+		StepVerifier.create(save)
+				.consumeNextWith(b -> System.out.println(b.getCorrelationId()))
+				.thenConsumeWhile(x -> true)
+				.verifyComplete();
+
+	}
+
+	@Test
+	void experiment() {
+		Mono<Experiment> test = experimentController.save(new Experiment("test"));
+		StepVerifier.create(test)
+				.consumeNextWith(b -> System.out.println(b.getName()))
+				.thenConsumeWhile(x -> true)
+				.verifyComplete();
+	}
+
+	@Test
+	void equipmentAndHaulage() throws IOException {
+		EquipmentAndHaulage equipmentAndHaulage = objectMapper.readValue(loadPayload("classpath:bookingInformation/equipmentAndHaulage.json"), EquipmentAndHaulage.class);
+		EquipmentAndHaulage equipmentAndHaulage1 = objectMapper.readValue(loadPayload("classpath:bookingInformation/equipmentAndHaulage.json"), EquipmentAndHaulage.class);
+		EquipmentAndHaulage equipmentAndHaulage2 = objectMapper.readValue(loadPayload("classpath:bookingInformation/equipmentAndHaulage.json"), EquipmentAndHaulage.class);
+		List<EquipmentAndHaulage> equipmentAndHaulageList = new ArrayList<>();
+		equipmentAndHaulageList.add(equipmentAndHaulage);
+		equipmentAndHaulageList.add(equipmentAndHaulage1);
+		equipmentAndHaulageList.add(equipmentAndHaulage2);
+		Flux<EquipmentAndHaulage> equipmentAndHaulageFlux = Mono.just(equipmentAndHaulageList)
+				.flatMapMany(Flux::fromIterable);
+		Flux<EquipmentAndHaulage> save = equipmentAndHaulageRepository.saveAll(equipmentAndHaulageFlux);
+		StepVerifier
+				.create(save)
+
+				.expectComplete()
+				.verify();
 	}
 
 	private static String loadPayload(String dataFilePath) throws IOException {

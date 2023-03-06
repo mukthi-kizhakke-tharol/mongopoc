@@ -4,6 +4,7 @@ import com.example.reactive.mongodb.entity.normalized.manualRef.ManualRefBook;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
+import org.bson.codecs.DocumentCodec;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,11 @@ public class CustomMongoConfig extends AbstractReactiveMongoConfiguration {
 
     @Value("${connectionString}")
     private String connectionString;
+
+    @Bean
+    public DocumentCodec documentCodec() {
+        return new CustomDocumentCodec();
+    }
 
     @Override
     public MongoClient createReactiveMongoClient(MongoClientSettings settings) {

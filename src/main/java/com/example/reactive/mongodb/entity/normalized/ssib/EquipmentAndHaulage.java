@@ -2,7 +2,12 @@ package com.example.reactive.mongodb.entity.normalized.ssib;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.List;
 
@@ -10,8 +15,10 @@ import java.util.List;
 @Document
 public class EquipmentAndHaulage {
 
-    public static final String WEIGHT = "WEIGHT";
-    private Long id;
+    /*@Field(targetType=FieldType.STRING)
+    @Id*/
+    @MongoId
+    private String id;
     private Container containerDetails;
 
     private List<Stuffing> stuffing;
@@ -31,7 +38,7 @@ public class EquipmentAndHaulage {
     public EquipmentAndHaulage() {
     }
 
-    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, Integer groupId, Long id) {
+    public EquipmentAndHaulage(Container containerDetails, List<Stuffing> stuffing, List<DangerousDetails> dangerousDetails, List<Haulage> haulage, String instanceId, String stuffingAction, String stuffingInstanceId, Integer groupId) {
         this.containerDetails = containerDetails;
         this.stuffing = stuffing;
         this.dangerousDetails = dangerousDetails;
@@ -40,7 +47,6 @@ public class EquipmentAndHaulage {
         this.stuffingAction = stuffingAction;
         this.stuffingInstanceId = stuffingInstanceId;
         this.groupId = groupId;
-        this.id = id;
     }
 
     public Container getContainerDetails() {
@@ -107,11 +113,11 @@ public class EquipmentAndHaulage {
         this.groupId = groupId;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

@@ -1,7 +1,7 @@
 package com.example.reactive.mongodb.entity.normalized.ssib;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -25,7 +25,7 @@ public class BookingInformation {
 
     private List<EquipmentAndHaulage> equipmentAndHaulage;
 
-    private List<Long> equipmentAndHaulageIds = new ArrayList<>();
+    private List<String> equipmentAndHaulageIds = new ArrayList<>();
 
     private CargoPackage cargoPackage;
 
@@ -48,7 +48,7 @@ public class BookingInformation {
     public BookingInformation() {
     }
 
-    public BookingInformation(String correlationId, List<Party> parties, Cargo cargo, List<EquipmentAndHaulage> equipmentAndHaulage, List<Long> equipmentAndHaulageIds, References references, Transport transport, CargoPackage cargoPackage, List<ActivityTask> activityTasks, ShipmentStatus shipmentStatus, String businessUnit, boolean isContainerGatedIn, boolean isContainerPickedUp, boolean isReefer, boolean isTemperatureControlled, boolean isDangerous) {
+    public BookingInformation(String correlationId, List<Party> parties, Cargo cargo, List<EquipmentAndHaulage> equipmentAndHaulage, List<String> equipmentAndHaulageIds, References references, Transport transport, CargoPackage cargoPackage, List<ActivityTask> activityTasks, ShipmentStatus shipmentStatus, String businessUnit, boolean isContainerGatedIn, boolean isContainerPickedUp, boolean isReefer, boolean isTemperatureControlled, boolean isDangerous) {
         this.correlationId = correlationId;
         this.parties = parties;
         this.cargo = cargo;
@@ -99,11 +99,11 @@ public class BookingInformation {
         this.equipmentAndHaulage = equipmentAndHaulage;
     }
 
-    public List<Long> getEquipmentAndHaulageIds() {
+    public List<String> getEquipmentAndHaulageIds() {
         return equipmentAndHaulageIds;
     }
 
-    public void setEquipmentAndHaulageIds(List<Long> equipmentAndHaulageIds) {
+    public void setEquipmentAndHaulageIds(List<String> equipmentAndHaulageIds) {
         this.equipmentAndHaulageIds = equipmentAndHaulageIds;
     }
 
